@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app_sqlite.CadastrarLivro">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Orange">
+            <Label Text="Cadastro de Livros" FontSize="Large" 
+                   HorizontalOptions="Center"/>
+            <Entry x:Name="id" Placeholder="Id" BackgroundColor="White" 
+                   PlaceholderColor="Gray" IsEnabled="False"/>
+            <Entry x:Name="titulo" Placeholder="Título" 
+                   BackgroundColor="White" PlaceholderColor="Gray"/>
+            <Entry x:Name="autor" Placeholder="Autor" 
+                   BackgroundColor="White" PlaceholderColor="Gray"/>
+            <Button x:Name="btSalvar" Text="Salvar" 
+                    Clicked="BtSalvar_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

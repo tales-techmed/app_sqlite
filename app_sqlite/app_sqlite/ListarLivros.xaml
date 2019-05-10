@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app_sqlite.ListarLivros">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="LightBlue">
+            <Label Text="Lista de Livros" FontSize="Large" 
+                   HorizontalOptions="Center"/>
+            <ListView x:Name="listagem" HasUnevenRows="True" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="0,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <StackLayout Grid.Column="0" >
+                                    <Label Text="{Binding id}" FontSize="Medium"/>
+                                    <Label Text="{Binding titulo}" FontAttributes="Bold"/>
+                                    <Label Text="{Binding autor}"/>
+                                </StackLayout>
+                                <Label Text="Mais..." Grid.Column="1"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                
+            </ListView>
+            <Button x:Name="btInserir" 
+                    Text="Inserir Livro" 
+                    Clicked="BtInserir_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
