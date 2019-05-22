@@ -6,7 +6,7 @@ using app_sqlite.Modelo;
 using SQLite;
 using System.Linq;
 
-namespace app_sqlite.BancoDeDados
+namespace app_sqlite.BancoDeDados 
 {
     class AcessoBD
     {
@@ -25,24 +25,20 @@ namespace app_sqlite.BancoDeDados
             conexao.Insert(livro);
         }
 
-        public void atualizar(Livro livro)
+        public void Atualizar(Livro livro)
         {
-
+            conexao.Update(livro);
         }
 
-        public void excluir(int idlivro)
+        public void Excluir(Livro livro)
         {
-
+            conexao.Delete(livro);
         }
 
         public List<Livro> Consultar()
         {
             return conexao.Table<Livro>().ToList();
-        }
-
-        public Livro ObterLivroPorId(int id)
-        {
-            return null;
+            //return conexao.Table<Livro>().OrderBy(l => l.titulo).ToList();
         }
 
     }

@@ -6,6 +6,7 @@
         <StackLayout BackgroundColor="LightBlue">
             <Label Text="Lista de Livros" FontSize="Large" 
                    HorizontalOptions="Center"/>
+            <Entry x:Name="pesquisa" Placeholder="Pesquisar" TextChanged="Pesquisa_TextChanged"/>
             <ListView x:Name="listagem" HasUnevenRows="True" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -23,7 +24,20 @@
                                     <Label Text="{Binding titulo}" FontAttributes="Bold"/>
                                     <Label Text="{Binding autor}"/>
                                 </StackLayout>
-                                <Label Text="Mais..." Grid.Column="1"/>
+                                <StackLayout Grid.Column="1" Orientation="Horizontal">
+                                    <Label Text="Editar">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="EditarAction" CommandParameter="{Binding .}"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <Label Text=" | "/>
+                                    <Label Text="Excluir">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="ExcluirAction" CommandParameter="{Binding .}"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </StackLayout>
+
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
