@@ -40,6 +40,6 @@ namespace app_sqlite.BancoDeDados
             return conexao.Table<Livro>().ToList();
             //return conexao.Table<Livro>().OrderBy(l => l.titulo).ToList();
         }
-
+         
     }
 }
